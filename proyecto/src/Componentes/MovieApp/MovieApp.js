@@ -42,7 +42,9 @@ class MovieApp extends Component {
 
         this.state = {
             movies: moviesSource,
-            myMovies: []
+            myMovies: [],
+            detalle: {}
+            
         }
     }
 
