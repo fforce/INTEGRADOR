@@ -123,6 +123,16 @@ class MovieApp extends Component {
         }
     }
 
+    
+    handleClickRemoveItem = (item) => event => {
+        event.preventDefault();
+        const { myMovies } = this.state;
+		const newMovie = myMovies.filter(oldMovie => oldMovie.id !== item.id);
+		this.setState(() => ({
+			myMovies: [...newMovie]			
+		}));
+    }
+
     render() {
 
         return (
@@ -136,12 +146,12 @@ class MovieApp extends Component {
                             {
                                 this.state.showGridPeliculas ? (
                                     <div className='row'>
-                                        <MovieListGrid showButtons={false} movies={this.state.movies} > </MovieListGrid>
+                                        <MovieListGrid showButtons={false} movies={this.state.movies}  clickDeleteMovie={()=>{}}> </MovieListGrid>
                                     </div>
                                 ) :
                                     (
                                         <div className='row'>
-                                            <MovieListItems showAddButtons={true} movies={this.state.movies} clickAddItem={this.handleClickAddItem} > </MovieListItems>
+                                            <MovieListItems showAddButtons={true} movies={this.state.movies} clickAddItem={this.handleClickAddItem} clickRemoveItem={() => { }}  > </MovieListItems>
                                         </div>
                                     )
                             }
@@ -152,11 +162,11 @@ class MovieApp extends Component {
                             {
                                 this.state.showGridMisPeliculas ? (
                                     <div className='row'>
-                                        <MovieListGrid showButtons={true} movies={this.state.myMovies} > </MovieListGrid>
+                                        <MovieListGrid showButtons={true} movies={this.state.myMovies}  clickDeleteMovie={this.handleClickRemoveItem}> </MovieListGrid>
                                     </div>) :
                                     (
                                         <div className='row'>
-                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }}> </MovieListItems>
+                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }}  clickRemoveItem={this.handleClickRemoveItem} > </MovieListItems>
                                         </div>
                                     )
                             }

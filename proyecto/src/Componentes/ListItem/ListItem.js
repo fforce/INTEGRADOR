@@ -11,7 +11,7 @@ class ListItem extends Component {
 
     render() {
 
-        const { title, description, imgUrl, showAddButtons, clickAddItem } = this.props;
+        const { title, description, imgUrl, showAddButtons, clickAddItem, clickRemoveItem } = this.props;
 
         return (
             <article className="col-md-6">
@@ -30,7 +30,7 @@ class ListItem extends Component {
                                     <MyListAddButton onClickAddButton={clickAddItem} />
                                 ) : (
                                         <div>
-                                            <MyListRemoveButton />
+                                            <MyListRemoveButton onClickRemoveButton={clickRemoveItem} />
                                             <MyListViewButton />
                                         </div>
                                     )

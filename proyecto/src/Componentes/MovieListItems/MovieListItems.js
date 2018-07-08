@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem'
 
-const MovieListItems = ({ movies, showAddButtons, clickAddItem }) => movies.map((movie, i) => (
+const MovieListItems = ({ movies, showAddButtons, clickAddItem, clickRemoveItem }) => movies.map((movie, i) => (
     <ListItem
         key={i}
         title={movie.title}
@@ -10,6 +10,7 @@ const MovieListItems = ({ movies, showAddButtons, clickAddItem }) => movies.map(
         imgUrl={movie.imgUrl} 
         showAddButtons = {showAddButtons}
         clickAddItem ={clickAddItem(movie)}
+        clickRemoveItem= {clickRemoveItem(movie)}
         />
 )
 );
