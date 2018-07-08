@@ -153,7 +153,7 @@ class MovieApp extends Component {
                                     </div>) :
                                     (
                                         <div className='row'>
-                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} > </MovieListItems>
+                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies}  clickAddItem={()=>{}}> </MovieListItems>
                                         </div>
                                     )
                             }
