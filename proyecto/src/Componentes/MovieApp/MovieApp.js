@@ -49,9 +49,8 @@ class MovieApp extends Component {
     }
 
     componentDidMount() {
-
     }
-
+    
     render() {
 
         return (
