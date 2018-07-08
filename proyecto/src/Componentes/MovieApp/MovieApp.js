@@ -114,10 +114,14 @@ class MovieApp extends Component {
 
     handleClickAddItem = (item) => event => {
         event.preventDefault();
-        const {myMovies} = this.state;
-        this.setState({
-            myMovies: [...myMovies, item],
-        });
+        const { myMovies } = this.state;
+        const exist = myMovies.filter((movie) => (movie.id == item.id))
+
+        if (exist.length == 0) {
+            this.setState({
+                myMovies: [...myMovies, item],
+            });
+        }
     }
 
     render() {
@@ -153,7 +157,7 @@ class MovieApp extends Component {
                                     </div>) :
                                     (
                                         <div className='row'>
-                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies}  clickAddItem={()=>{}}> </MovieListItems>
+                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }}> </MovieListItems>
                                         </div>
                                     )
                             }
