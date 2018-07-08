@@ -116,7 +116,6 @@ class MovieApp extends Component {
         event.preventDefault();
         const { myMovies } = this.state;
         const exist = myMovies.filter((movie) => (movie.id == item.id))
-
         if (exist.length == 0) {
             this.setState({
                 myMovies: [...myMovies, item],
