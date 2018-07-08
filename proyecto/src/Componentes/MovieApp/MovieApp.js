@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Nav from '../Nav'
 import MovieListGrid from '../MovieListGrid'
-import MovieListItems  from '../MovieListItems'
+import MovieListItems from '../MovieListItems'
+import FilterBar from '../FilterBar'
 
 
 const moviesSource = [
@@ -67,14 +68,42 @@ class MovieApp extends Component {
         this.state = {
             movies: moviesSource,
             myMovies: [],
-            detalle: {}
-            
+            detalle: {},
+            showGridPeliculas: true,
+            showGridMisPeliculas: true
+
         }
     }
 
     componentDidMount() {
     }
+
+    handleOnClickGrid = () => event => {	
+        this.setState({
+            showGridPeliculas: true
+        });
+    }
     
+    handleOnClickList = () => event => {
+	
+        this.setState({
+            showGridPeliculas: false
+        });
+    }
+    
+    handleOnClickGridMis = () => event => {	
+        this.setState({
+            showGridMisPeliculas: true
+        });
+    }
+    
+    handleOnClickListMis = () => event => {
+	
+        this.setState({
+            showGridMisPeliculas: false
+        });
+	}
+
     render() {
 
         return (
@@ -83,19 +112,35 @@ class MovieApp extends Component {
                 <div className="py-5 bg-light">
                     <div className="container">
                         <section className="items-section">
-                            <h5 className="items-section-title">Mi Lista <a href="">Ver todas</a></h5>
-                            <div className='row'>
-                                <MovieListGrid showButtons={false} movies={this.state.movies} > </MovieListGrid>
-                            </div>
-                            <div className='row'>
-                                <MovieListGrid showButtons={true} movies={this.state.movies} > </MovieListGrid>
-                            </div>
-                            <div className='row'>
-                                <MovieListItems showAddButtons={true} movies={this.state.movies} > </MovieListItems>
-                            </div>
-                            <div className='row'>
-                                <MovieListItems showAddButtons={false} movies={this.state.movies} > </MovieListItems>
-                            </div>
+                            <h5 className="items-section-title">Peliculas <a href="">Ver todas</a></h5>
+                            <FilterBar onClickGrid={this.handleOnClickGrid()} onClickList={this.handleOnClickList()} />
+                            {
+                                this.state.showGridPeliculas ? (
+                                    <div className='row'>
+                                        <MovieListGrid showButtons={false} movies={this.state.movies} > </MovieListGrid>
+                                    </div>
+                                ) :
+                                    (
+                                        <div className='row'>
+                                            <MovieListItems showAddButtons={true} movies={this.state.movies} > </MovieListItems>
+                                        </div>
+                                    )
+                            }
+                            <h5 className="items-section-title">Mis Peliculas <a href="">Ver todas</a></h5>
+                            
+                            <FilterBar onClickGrid={this.handleOnClickGridMis()} onClickList={this.handleOnClickListMis()} />
+
+                            {
+                                this.state.showGridMisPeliculas ? (
+                                    <div className='row'>
+                                        <MovieListGrid showButtons={true} movies={this.state.movies} > </MovieListGrid>
+                                    </div>) :
+                                    (
+                                        <div className='row'>
+                                            <MovieListItems showAddButtons={false} movies={this.state.movies} > </MovieListItems>
+                                        </div>
+                                    )
+                            }
                         </section>
                     </div>
                 </div>

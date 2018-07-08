@@ -18,7 +18,7 @@ class GridItem extends Component {
                         <span className="grid-item-title">{title}</span>
                         <span className="grid-item-date">{date}</span>
                         {showButtons && (
-                            <div class="grid-item-actions">
+                            <div className="grid-item-actions">
                                 <a href="#" className="btn btn-primary" aria-label="Profile">
                                     <i className="mdi mdi-delete" aria-hidden="true"></i>
                                 </a>
