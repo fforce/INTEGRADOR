@@ -18,7 +18,7 @@ const moviesSource = [
     },
     {
         id: 2,
-        title: 'Thor: Ragnarock',
+        title: 'Thor: pepe',
         date: 'Octover 25, 2017',
         imgUrl: 'https://image.tmdb.org/t/p/w370_and_h556_bestv2/oSLd5GYGsiGgzDPKTwQh7wamO8t.jpg',
         description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -72,6 +72,7 @@ class MovieApp extends Component {
         super(props)
 
         this.state = {
+            allMovies: moviesSource,
             movies: moviesSource,
             myMovies: [],
             detalle: {},
@@ -123,21 +124,31 @@ class MovieApp extends Component {
         }
     }
 
-    
+
     handleClickRemoveItem = (item) => event => {
         event.preventDefault();
         const { myMovies } = this.state;
-		const newMovie = myMovies.filter(oldMovie => oldMovie.id !== item.id);
-		this.setState(() => ({
-			myMovies: [...newMovie]			
-		}));
+        const newMovie = myMovies.filter(oldMovie => oldMovie.id !== item.id);
+        this.setState(() => ({
+            myMovies: [...newMovie]
+        }));
+    }
+
+    hanldeSubmitSearch = (text) => event => {
+        event.preventDefault();
+        const { allMovies, movies  } = this.state;
+        const filteresMovies = allMovies.filter(oldMovie => oldMovie.title.includes(text));
+
+        this.setState(() => ({
+            movies: [...filteresMovies]
+        }));
     }
 
     render() {
 
         return (
             <div>
-                <Nav> </Nav>
+                <Nav submitSearch={this.hanldeSubmitSearch}> </Nav>
                 <div className="py-5 bg-light">
                     <div className="container">
                         <section className="items-section">
@@ -146,7 +157,7 @@ class MovieApp extends Component {
                             {
                                 this.state.showGridPeliculas ? (
                                     <div className='row'>
-                                        <MovieListGrid showButtons={false} movies={this.state.movies}  clickDeleteMovie={()=>{}}> </MovieListGrid>
+                                        <MovieListGrid showButtons={false} movies={this.state.movies} clickDeleteMovie={() => { }}> </MovieListGrid>
                                     </div>
                                 ) :
                                     (
@@ -162,11 +173,11 @@ class MovieApp extends Component {
                             {
                                 this.state.showGridMisPeliculas ? (
                                     <div className='row'>
-                                        <MovieListGrid showButtons={true} movies={this.state.myMovies}  clickDeleteMovie={this.handleClickRemoveItem}> </MovieListGrid>
+                                        <MovieListGrid showButtons={true} movies={this.state.myMovies} clickDeleteMovie={this.handleClickRemoveItem}> </MovieListGrid>
                                     </div>) :
                                     (
                                         <div className='row'>
-                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }}  clickRemoveItem={this.handleClickRemoveItem} > </MovieListItems>
+                                            <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }} clickRemoveItem={this.handleClickRemoveItem} > </MovieListItems>
                                         </div>
                                     )
                             }

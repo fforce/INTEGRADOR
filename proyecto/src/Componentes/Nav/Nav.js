@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBox from '../SearchBox'
 
-const Nav = ({ name }) => (
+const Nav = ({ submitSearch }) => (
     <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -26,7 +26,7 @@ const Nav = ({ name }) => (
                         </li>
                     </ul>
                     <div className="form-inline my-2 my-md-0" action="busqueda-peliculas-grid.html">
-                        <SearchBox />
+                        <SearchBox submitSearchInput={submitSearch} />
                     </div>
                 </div>
             </div>
