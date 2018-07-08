@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../Nav'
-import MovieList from '../MovieList'
+import MovieListGrid from '../MovieListGrid'
 
 
 const moviesSource = [
@@ -61,7 +61,10 @@ class MovieApp extends Component {
                         <section className="items-section">
                             <h5 className="items-section-title">Mi Lista <a href="">Ver todas</a></h5>
                             <div className='row'>
-                                <MovieList movies={this.state.movies} > </MovieList>
+                                <MovieListGrid showButtons={false} movies={this.state.movies} > </MovieListGrid>
+                            </div>
+                            <div className='row'>
+                                <MovieListGrid showButtons={true} movies={this.state.movies} > </MovieListGrid>
                             </div>
                         </section>
                     </div>

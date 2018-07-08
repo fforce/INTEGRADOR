@@ -8,7 +8,7 @@ class GridItem extends Component {
 
     render() {
 
-        const { title, date, imgUrl } = this.props;
+        const { title, date, imgUrl, showButtons } = this.props;
 
         return (
             <article className="col-md-2">
@@ -17,9 +17,17 @@ class GridItem extends Component {
                     <span className="grid-item-body">
                         <span className="grid-item-title">{title}</span>
                         <span className="grid-item-date">{date}</span>
-                        <div class="grid-item-actions">
-                            {this.props.children}
-                        </div>
+                        {showButtons && (
+                            <div class="grid-item-actions">
+                                <a href="#" className="btn btn-primary" aria-label="Profile">
+                                    <i className="mdi mdi-delete" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" className="btn btn-primary" aria-label="Profile">
+                                    <i className="mdi mdi-eye-outline" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        )}
+
                     </span>
                 </a>
             </article>
