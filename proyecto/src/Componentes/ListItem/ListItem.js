@@ -11,7 +11,7 @@ class ListItem extends Component {
 
     render() {
 
-        const { title, description, imgUrl, showAddButtons } = this.props;
+        const { title, description, imgUrl, showAddButtons, clickAddItem } = this.props;
 
         return (
             <article className="col-md-6">
@@ -27,11 +27,11 @@ class ListItem extends Component {
                         <div className="list-item-actions">
                             {
                                 showAddButtons ? (
-                                    <MyListAddButton/>
+                                    <MyListAddButton onClickAddButton={clickAddItem} />
                                 ) : (
                                         <div>
-                                            <MyListRemoveButton/>
-                                            <MyListViewButton/>
+                                            <MyListRemoveButton />
+                                            <MyListViewButton />
                                         </div>
                                     )
                             }
