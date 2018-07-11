@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBox from '../SearchBox'
+import PropTypes from "prop-types";
 
 const Nav = ({ submitSearch }) => (
     <header>
@@ -33,5 +34,9 @@ const Nav = ({ submitSearch }) => (
         </nav>
     </header>
 );
+
+Nav.propTypes = {
+    submitSearch: PropTypes.func, 
+};
 
 export default Nav;

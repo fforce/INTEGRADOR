@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 
 class GridItem extends Component {
 
@@ -33,6 +34,14 @@ class GridItem extends Component {
             </article>
         )
     }
+}
+
+GridItem.propTypes = {
+    title: PropTypes.string,
+    date: PropTypes.date,
+    imgUrl : PropTypes.string,
+    showButtons : PropTypes.bool,
+    clickDeleteMovie : PropTypes.func
 }
 
 export default GridItem;    

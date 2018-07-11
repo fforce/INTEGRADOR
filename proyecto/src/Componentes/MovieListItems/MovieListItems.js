@@ -21,8 +21,10 @@ MovieListItems.propTypes = {
         description: PropTypes.string,
         imgUrl: PropTypes.string,
         showAddButtons : PropTypes.bool
-    })).isRequired
-
+    })),
+    showAddButtons : PropTypes.bool,
+    clickAddItem: PropTypes.func,
+    clickRemoveItem: PropTypes.func
 };
 
 export default MovieListItems;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 const MyListViewButton = ({ onClickRemoveButton }) => (
     <a href="#" onClick={onClickRemoveButton} className="btn btn-primary" aria-label="Profile">
@@ -6,4 +7,7 @@ const MyListViewButton = ({ onClickRemoveButton }) => (
     </a>
 );
 
+MyListViewButton.propTypes = {
+    onClickRemoveButton: PropTypes.func, 
+};
 export default MyListViewButton;    

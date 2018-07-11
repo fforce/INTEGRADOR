@@ -19,8 +19,11 @@ MovieListGrid.propTypes = {
         title: PropTypes.string,
         date: PropTypes.string,
         imgUrl: PropTypes.string,
-    })).isRequired
+    })),
+    showButtons : PropTypes.func,
+    clickDeleteMovie : PropTypes.func
 
 };
+
 
 export default MovieListGrid;

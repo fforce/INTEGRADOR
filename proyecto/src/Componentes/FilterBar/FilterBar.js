@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
 
 const FilterBar = ({ onClickGrid, onClickList }) => (
@@ -17,4 +18,8 @@ const FilterBar = ({ onClickGrid, onClickList }) => (
     </div>
 )
 
+FilterBar.propTypes = {
+    onClickGrid: PropTypes.func,
+    onClickList: PropTypes.func
+}
 export default FilterBar

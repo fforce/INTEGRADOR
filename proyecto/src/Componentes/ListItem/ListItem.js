@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MyListAddButton from '../MyListAddButton'
 import MyListRemoveButton from '../MyListRemoveButton'
 import MyListViewButton from '../MyListViewButton'
+import PropTypes from "prop-types";
 
 class ListItem extends Component {
 
@@ -43,5 +44,13 @@ class ListItem extends Component {
     }
 }
 
+ListItem.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.date,
+    imgUrl : PropTypes.string,
+    showAddButtons : PropTypes.bool,
+    clickAddItem : PropTypes.func,
+    clickRemoveItem : PropTypes.func
+}
 
 export default ListItem;    

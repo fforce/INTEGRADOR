@@ -3,6 +3,7 @@ import Nav from '../Nav'
 import MovieListGrid from '../MovieListGrid'
 import MovieListItems from '../MovieListItems'
 import FilterBar from '../FilterBar'
+import PropTypes from "prop-types";
 
 
 const moviesSource = [

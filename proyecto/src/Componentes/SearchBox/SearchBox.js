@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
+
 class SearchBox extends Component {
 
     constructor(props) {
@@ -32,5 +33,7 @@ class SearchBox extends Component {
     }
 }
 
-
+SearchBox.propTypes = {
+    submitSearchInput: PropTypes.func, 
+};
 export default SearchBox;    
