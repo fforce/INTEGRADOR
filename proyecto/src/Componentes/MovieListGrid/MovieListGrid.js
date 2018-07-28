@@ -6,7 +6,7 @@ const MovieListGrid = ({ movies, showButtons, clickDeleteMovie }) => movies.map(
     <GridItem
         key={i}
         title={movie.title}
-        date={movie.date}
+        date={movie.date} 
         imgUrl={movie.imgUrl} 
         showButtons = {showButtons}
         clickDeleteMovie = {clickDeleteMovie(movie)}
