@@ -5,7 +5,7 @@ import GridItem from '../GridItem'
 const MovieListGrid = ({ movies, showButtons, clickDeleteMovie }) => movies.map((movie, i) => (
     <GridItem
         key={i}
-        title={movie.title}
+        title={movie.title} 
         date={movie.date}
         imgUrl={movie.imgUrl} 
         showButtons = {showButtons}
