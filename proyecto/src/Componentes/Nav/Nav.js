@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBox from '../SearchBox'
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
+import { Link } from 'react-router-dom'
 
 const Nav = ({ submitSearch }) => (
     <header>
@@ -14,16 +15,16 @@ const Nav = ({ submitSearch }) => (
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="index.html">Home</a>
+                            <Link to='/' className='nav-link' >Home  </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="peliculas-grid.html">Peliculas</a>
+                            <Link to='/peliculas' className='nav-link' >Peliculas  </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="series-grid.html">Series</a>
+                            <Link to='/series' className='nav-link' >Peliculas  </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="mi-lista-grid.html">Mi Lista <span className="badge badge-danger">3</span></a>
+                            <Link to='/milista' className='nav-link' >Mi lista  </Link>
                         </li>
                     </ul>
                     <div className="form-inline my-2 my-md-0" action="busqueda-peliculas-grid.html">
@@ -36,7 +37,7 @@ const Nav = ({ submitSearch }) => (
 );
 
 Nav.propTypes = {
-    submitSearch: PropTypes.func, 
+    submitSearch: PropTypes.func,
 };
 
 export default Nav;
