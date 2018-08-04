@@ -3,7 +3,7 @@ import Nav from '../Nav'
 import MovieListGrid from '../MovieListGrid'
 import MovieListItems from '../MovieListItems'
 import FilterBar from '../FilterBar'
-import PropTypes from "prop-types";
+import MovieApi  from "../../API/MovieApi"
 
 
 const moviesSource = [
@@ -81,9 +81,12 @@ class MovieApp extends Component {
             showGridMisPeliculas: true
 
         }
+
+        this.movieApi = new MovieApi();
     }
 
     componentDidMount() {
+        this.movieApi.getMoviesPopulars();
     }
 
     handleOnClickGrid = () => event => {
@@ -117,8 +120,8 @@ class MovieApp extends Component {
     handleClickAddItem = (item) => event => {
         event.preventDefault();
         const { myMovies } = this.state;
-        const exist = myMovies.filter((movie) => (movie.id == item.id))
-        if (exist.length == 0) {
+        const exist = myMovies.filter((movie) => (movie.id === item.id))
+        if (exist.length === 0) {
             this.setState({
                 myMovies: [...myMovies, item],
             });

@@ -38,7 +38,7 @@ class GridItem extends Component {
 
 GridItem.propTypes = {
     title: PropTypes.string,
-    date: PropTypes.date,
+    date: PropTypes.string,
     imgUrl : PropTypes.string,
     showButtons : PropTypes.bool,
     clickDeleteMovie : PropTypes.func

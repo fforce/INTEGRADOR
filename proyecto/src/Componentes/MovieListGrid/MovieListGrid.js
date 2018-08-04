@@ -22,7 +22,7 @@ MovieListGrid.propTypes = {
         date: PropTypes.string,
         imgUrl: PropTypes.string,
     })),
-    showButtons : PropTypes.func,
+    showButtons : PropTypes.bool,
     clickDeleteMovie : PropTypes.func
 
 };
