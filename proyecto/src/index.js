@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/PeliculasContainer';
+import App from './componentes/MovieApp';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware , compose} from 'redux'
 import { Provider } from 'react-redux'

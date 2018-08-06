@@ -1,7 +1,7 @@
 import React from  'react'
 import {Switch, Route} from 'react-router-dom'
 import Home from '../Pages/Home'
-import Peliculas from '../Pages/Peliculas'
+import Peliculas from '../../containers/PeliculasContainer'
 import MiLista from '../Pages/MiLista'
 import Series from '../Pages/Series'
 
