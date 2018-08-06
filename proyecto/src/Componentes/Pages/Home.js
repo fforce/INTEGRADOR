@@ -154,20 +154,7 @@ class Home extends Component {
                 <div className="py-5 bg-light">
                     <div className="container">
                         <section className="items-section">
-                            <h5 className="items-section-title">Peliculas <a href="">Ver todas</a></h5>
-                            <FilterBar onClickGrid={this.handleOnClickGrid()} onClickList={this.handleOnClickList()} />
-                            {
-                                this.state.showGridPeliculas ? (
-                                    <div className='row'>
-                                        <MovieListGrid showButtons={false} movies={this.state.movies} clickDeleteMovie={() => { }}> </MovieListGrid>
-                                    </div>
-                                ) :
-                                    (
-                                        <div className='row'>
-                                            <MovieListItems showAddButtons={true} movies={this.state.movies} clickAddItem={this.handleClickAddItem} clickRemoveItem={() => { }}  > </MovieListItems>
-                                        </div>
-                                    )
-                            }
+                       
                             <h5 className="items-section-title">Mis Peliculas <a href="">Ver todas</a></h5>
 
                             <FilterBar onClickGrid={this.handleOnClickGridMis()} onClickList={this.handleOnClickListMis()} />
@@ -180,6 +167,21 @@ class Home extends Component {
                                     (
                                         <div className='row'>
                                             <MovieListItems showAddButtons={false} movies={this.state.myMovies} clickAddItem={() => { }} clickRemoveItem={this.handleClickRemoveItem} > </MovieListItems>
+                                        </div>
+                                    )
+                            }
+
+                         <h5 className="items-section-title">Peliculas <a href="">Ver todas</a></h5>
+                            <FilterBar onClickGrid={this.handleOnClickGrid()} onClickList={this.handleOnClickList()} />
+                            {
+                                this.state.showGridPeliculas ? (
+                                    <div className='row'>
+                                        <MovieListGrid showButtons={false} movies={this.state.movies} clickDeleteMovie={() => { }}> </MovieListGrid>
+                                    </div>
+                                ) :
+                                    (
+                                        <div className='row'>
+                                            <MovieListItems showAddButtons={true} movies={this.state.movies} clickAddItem={this.handleClickAddItem} clickRemoveItem={() => { }}  > </MovieListItems>
                                         </div>
                                     )
                             }
