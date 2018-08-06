@@ -1,0 +1,6 @@
+1 - si hago un switch de componentes deberia ser de containers?
+
+2- como deberia disenar mejor mi site?
+
+3 - en el index le tengo q pasar un container al provider, q container le deberia pasars
+si estoy usando ruteo?
