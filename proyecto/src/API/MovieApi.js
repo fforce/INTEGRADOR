@@ -16,7 +16,7 @@ class MovieApi {
 
     getMoviesPopulars = () => {
         return this.axios.get(`movie/popular?language=en-US&page=1`).then(response => {
-            const comics = response.data.results.map((item) => (
+            const movies = response.data.results.map((item) => (
                 {
                     title: item.title,
                     date: item.release_date,
@@ -24,7 +24,22 @@ class MovieApi {
                 }
             ))
             debugger
-            return comics;
+            return movies;
+        })
+    }
+
+
+    getSeriesPopulars = () => {
+        return this.axios.get(`tv/popular?language=en-US&page=1`).then(response => {
+            const series = response.data.results.map((item) => (
+                {
+                    title: item.title,
+                    date: item.release_date,
+                    imgUrl: imgPath + item.poster_path,               
+                }
+            ))
+            debugger
+            return series;
         })
     }
 }

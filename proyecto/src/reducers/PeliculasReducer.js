@@ -16,7 +16,6 @@ const PeliculasReducer = (state = initialStateMovies, action) => {
           showButtons: false
         }]
         case SET_MOVIES:
-        debugger
         return action.movies
         default:
             return state

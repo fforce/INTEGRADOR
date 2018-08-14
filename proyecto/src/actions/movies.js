@@ -1,9 +1,10 @@
 import {
-    SET_MOVIES
+    SET_MOVIES,
+    SET_SERIES
   } from '../constants/actionTypes'
 
 
-const loadPopularMovies = () =>
+  export const loadPopularMovies = () =>
 
   (dispatch, getState, api) => {
     /*const comics = getComics(getState())
@@ -21,4 +22,23 @@ const loadPopularMovies = () =>
       ///dispatch({ type: 'STOP_LOADING' })
     })
   }
-  export default loadPopularMovies
+
+
+  export const loadPopularSeries = () =>
+
+  (dispatch, getState, api) => {
+    /*const comics = getComics(getState())
+    if (comics) {
+      return
+    }*/
+    //dispatch({ type: 'LOADING' })
+ 
+    api.getSeriesPopulars().then(series => {
+      debugger
+      dispatch({ type: SET_SERIES, series })
+    }, error => {
+      //dispatch({ type: 'COMICS_ERROR', error })
+    }).then(() => {
+      ///dispatch({ type: 'STOP_LOADING' })
+    })
+  }

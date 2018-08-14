@@ -21,7 +21,7 @@ const Nav = ({ submitSearch }) => (
                             <Link to='/peliculas' className='nav-link' >Peliculas  </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/series' className='nav-link' >Peliculas  </Link>
+                            <Link to='/series' className='nav-link' > Series  </Link>
                         </li>
                         <li className="nav-item">
                             <Link to='/milista' className='nav-link' >Mi lista  </Link>
