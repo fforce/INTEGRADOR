@@ -44,7 +44,7 @@ class HomeContainer extends Component {
 
 
 const mapStateToProps = (state) => ({
-    peliculas: getMaxItems(state.movies),
+    peliculas: getMaxItems(state.movies.movieList),
     series: getMaxItems(state.series)
 })
 

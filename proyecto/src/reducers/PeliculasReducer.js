@@ -3,20 +3,22 @@ import {
     SET_MOVIES
 } from '../constants/actionTypes'
 
-const initialStateMovies = []
+import moment from 'moment'
+
+const initialStateMovies = {
+    movieList: [],
+    expirate: 0
+}
 
 const PeliculasReducer = (state = initialStateMovies, action) => {
 
     switch (action.type) { 
-        case ADD_MOVIE:
-        return [...state, {
-          title: action.title,
-          date: action.date,
-          imgUrl: action.imgUrl,
-          showButtons: false
-        }]
+   
         case SET_MOVIES:
-        return action.movies
+        return {
+            movieList : action.movies,
+            expirate: +moment().add(1, 'minutes')
+        }
         default:
             return state
     }

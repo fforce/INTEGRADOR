@@ -2,6 +2,7 @@ import {
     SET_MOVIES,
     SET_SERIES
   } from '../constants/actionTypes'
+import moment from 'moment';
 
 
   export const loadPopularMovies = () =>
@@ -15,7 +16,11 @@ import {
  
     api.getMoviesPopulars().then(movies => {
       debugger
-      dispatch({ type: SET_MOVIES, movies })
+      const state = getState();
+      let now = +moment();
+      if(now > state.movies.expirate){
+        dispatch({ type: SET_MOVIES, movies })
+      }
     }, error => {
       //dispatch({ type: 'COMICS_ERROR', error })
     }).then(() => {
