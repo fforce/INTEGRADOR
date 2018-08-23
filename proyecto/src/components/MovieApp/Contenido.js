@@ -1,11 +1,9 @@
 import React from  'react'
 import {Switch, Route} from 'react-router-dom'
-import Home from '../Pages/Home'
 import Peliculas from '../../containers/PeliculasContainer'
 import HomeContainer from '../../containers/HomeContainer'
 import MiLista from '../Pages/MiLista'
-import Series from '../Pages/Series'
-
+import Series from '../../containers/SeriesContainer'
 
 const Contenido = () => {
   return(

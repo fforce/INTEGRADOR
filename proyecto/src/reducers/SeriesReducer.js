@@ -2,13 +2,21 @@ import {
     SET_SERIES
 } from '../constants/actionTypes'
 
-const initialStateSeries = []
+import moment from 'moment'
+
+const initialStateSeries = {
+    seriesList: [],
+    expirate: 0
+}
 
 const SeriesReducer = (state = initialStateSeries, action) => {
 
     switch (action.type) {       
         case SET_SERIES:
-        return action.series
+        return {
+            seriesList : action.series,
+            expirate: +moment().add(1, 'minutes')
+        }
         default:
             return state
     }

@@ -45,7 +45,7 @@ class HomeContainer extends Component {
 
 const mapStateToProps = (state) => ({
     peliculas: getMaxItems(state.movies.movieList),
-    series: getMaxItems(state.series)
+    series: getMaxItems(state.series.seriesList)
 })
 
 //esta es la forma mas cool el motor se encarga de ejecutar

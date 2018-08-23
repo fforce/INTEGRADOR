@@ -1,11 +1,11 @@
 import {
-    SET_MOVIES,
-    SET_SERIES
-  } from '../constants/actionTypes'
+  SET_MOVIES,
+  SET_SERIES
+} from '../constants/actionTypes'
 import moment from 'moment';
 
 
-  export const loadPopularMovies = () =>
+export const loadPopularMovies = () =>
 
   (dispatch, getState, api) => {
     /*const comics = getComics(getState())
@@ -13,12 +13,12 @@ import moment from 'moment';
       return
     }*/
     //dispatch({ type: 'LOADING' })
- 
+
     api.getMoviesPopulars().then(movies => {
-      debugger
+
       const state = getState();
       let now = +moment();
-      if(now > state.movies.expirate){
+      if (now > state.movies.expirate) {
         dispatch({ type: SET_MOVIES, movies })
       }
     }, error => {
@@ -29,7 +29,7 @@ import moment from 'moment';
   }
 
 
-  export const loadPopularSeries = () =>
+export const loadPopularSeries = () =>
 
   (dispatch, getState, api) => {
     /*const comics = getComics(getState())
@@ -37,10 +37,13 @@ import moment from 'moment';
       return
     }*/
     //dispatch({ type: 'LOADING' })
- 
+
     api.getSeriesPopulars().then(series => {
-      debugger
-      dispatch({ type: SET_SERIES, series })
+      const state = getState();
+      let now = +moment();
+      if (now > state.series.expirate) {
+        dispatch({ type: SET_SERIES, series })
+      }
     }, error => {
       //dispatch({ type: 'COMICS_ERROR', error })
     }).then(() => {
