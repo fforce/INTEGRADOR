@@ -19,8 +19,7 @@ MovieListItems.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
-        imgUrl: PropTypes.string,
-        showAddButtons : PropTypes.bool
+        imgUrl: PropTypes.string
     })),
     showAddButtons : PropTypes.bool,
     clickAddItem: PropTypes.func,

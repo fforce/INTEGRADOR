@@ -1,6 +1,8 @@
 import {
   SET_MOVIES,
-  SET_SERIES
+  SET_SERIES,
+  SHOW_MOVIES_LISTITEMS,
+  SHOW_SERIES_LISTITEMS,
 } from '../constants/actionTypes'
 import moment from 'moment';
 
@@ -50,3 +52,16 @@ export const loadPopularSeries = () =>
       ///dispatch({ type: 'STOP_LOADING' })
     })
   }
+
+
+  export const showMoviesListITems = show => ({
+    type: SHOW_MOVIES_LISTITEMS,
+    showMoviesListItems: show
+  })
+
+
+  export const showSeriesListItems = show => ({
+    type: SHOW_SERIES_LISTITEMS,
+    showSeriesListItems: show
+  })
+  

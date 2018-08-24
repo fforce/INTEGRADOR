@@ -16,14 +16,15 @@ class MovieApi {
 
     getMoviesPopulars = () => {
         return this.axios.get(`movie/popular?language=en-US&page=1`).then(response => {
+            debugger;
             const movies = response.data.results.map((item) => (
                 {
                     title: item.title,
                     date: item.release_date,
-                    imgUrl: imgPath + item.poster_path,               
+                    imgUrl: imgPath + item.poster_path,    
+                    description : item.overview.substring(0,200)          
                 }
             ))
-            debugger
             return movies;
         })
     }
@@ -35,10 +36,10 @@ class MovieApi {
                 {
                     title: item.title,
                     date: item.release_date,
-                    imgUrl: imgPath + item.poster_path,               
+                    imgUrl: imgPath + item.poster_path,  
+                    description : item.overview.substring(0,200)                       
                 }
             ))
-            debugger
             return series;
         })
     }
