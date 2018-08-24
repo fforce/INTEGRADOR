@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 
 
-const FilterBar = ({ onClickGrid, onClickList }) => (
+const FilterBar = ({ onClickGrid, onClickList }) =>(
     <div className="filters-bar">
         <div className="filters-bar-left">
 

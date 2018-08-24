@@ -210,3 +210,6 @@ The below snippet of CSS must be included into your project. Future release may 
 .btn-primary{
   margin: 3px
 }
+.items-milista{
+  float: left
+}
