@@ -133,7 +133,7 @@ The below snippet of CSS must be included into your project. Future release may 
 
 .filters-bar {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .filters-bar-left {
