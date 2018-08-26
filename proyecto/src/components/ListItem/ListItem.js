@@ -46,7 +46,7 @@ class ListItem extends Component {
 
 ListItem.propTypes = {
     title: PropTypes.string,
-    description: PropTypes.date,
+    description: PropTypes.string,
     imgUrl : PropTypes.string,
     showAddButtons : PropTypes.bool,
     clickAddItem : PropTypes.func,

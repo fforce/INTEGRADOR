@@ -5,7 +5,6 @@ import GridItem from '../GridItem'
 const MovieListGrid = ({ movies, showButtons, clickDeleteMovie }) => {
 
     if (movies) {
-        debugger
         return (
             movies.map((movie, i) => (
                 <GridItem

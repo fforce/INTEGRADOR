@@ -20,7 +20,6 @@ const SeriesReducer = (state = initialStateSeries, action) => {
             expirate: +moment().add(1, 'minutes')
         }
         case SHOW_SERIES_LISTITEMS:
-        debugger;
         return {...state, showSeriesListItems: action.showSeriesListItems }
         default:
             return state

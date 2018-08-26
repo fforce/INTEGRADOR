@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../ListItem'
 
-const MovieListItems = ({ movies, showAddButtons, clickAddItem, clickRemoveItem }) => movies.map((movie, i) => (
+const MovieListItems = 
+({ movies, showAddButtons, clickAddItem, clickRemoveItem }) => movies.map((movie, i) => (
     <ListItem
         key={i}
         title={movie.title}

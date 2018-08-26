@@ -15,17 +15,17 @@ const Nav = ({ submitSearch }) => (
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to='/' exact={true} className='nav-link' activeClassName='active'  >Home  </Link>
+                            <Link to='/' className='nav-link' >Home  </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/peliculas' className='nav-link' activeClassName='active' >Peliculas  </Link>
+                            <Link to='/peliculas' className='nav-link'>Peliculas  </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/series' className='nav-link' activeClassName='active' > Series  </Link>
+                            <Link to='/series' className='nav-link'> Series  </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to='/milista' className='nav-link items-milista' activeClassName='active' >Mi lista</Link>
-                            <span class="badge badge-danger">3</span>
+                            <Link to='/milista' className='nav-link items-milista' >Mi lista</Link>
+                            <span className="badge badge-danger">3</span>
                         </li>
                     </ul>
                     <div className="form-inline my-2 my-md-0" action="busqueda-peliculas-grid.html">

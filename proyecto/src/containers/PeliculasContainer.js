@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import MovieListGrid from '../components/MovieListGrid'
 import { connect } from "react-redux"
-import { loadPopularMovies, showMoviesListITems } from "../actions/movies"
+import { loadPopularMovies, showMoviesListITems, addMyLisItem, hideAlert } from "../actions/movies"
 import { getMaxItems } from '../selectors/sharedSelectors'
 import FilterBar from '../components/FilterBar'
 import MovieListItems from '../components/MovieListItems'
+import AlertDialog from '../components/Shared/AlertDialog'
 
 
 class Peliculas extends Component {
@@ -17,17 +18,21 @@ class Peliculas extends Component {
         this.props.loadPopularMovies()
     }
 
-    showListGrid = event =>
-    {
+    showListGrid = event => {
         this.props.showMoviesList(false);
     }
 
-    showListItems = event =>
-    {
+    showListItems = event => {
         this.props.showMoviesList(true);
     }
 
+    addListItemMovie = item => event => {
+        this.props.addListItem(item);
+    }
 
+    closeAlert = () => {
+        this.props.handleClose()
+    }
 
     render() {
         const { peliculas, showMoviesListItems } = this.props;
@@ -49,12 +54,19 @@ class Peliculas extends Component {
                             {!showMoviesListItems ?
                                 <MovieListGrid showButtons={false} movies={peliculas} clickDeleteMovie={() => { }}> </MovieListGrid>
                                 :
-                                <MovieListItems movies={peliculas} showAddButtons={true} clickAddItem={() => { }} clickRemoveItem={() => { }} ></MovieListItems>
+                                <MovieListItems movies={peliculas} showAddButtons={true} clickAddItem={this.addListItemMovie} clickRemoveItem={() => { }} ></MovieListItems>
                             }
                         </div>
                     </section>
                 </div>
+                <AlertDialog
+                    open={this.props.open}
+                    message={this.props.message}
+                    handleClose={this.closeAlert}
+
+                ></AlertDialog>
             </div>
+
         )
     }
 }
@@ -62,12 +74,16 @@ class Peliculas extends Component {
 
 const mapStateToProps = (state) => ({
     peliculas: getMaxItems(state.movies.movieList),
-    showMoviesListItems: state.movies.showMoviesListItems
+    showMoviesListItems: state.movies.showMoviesListItems,
+    open: state.showAlert.open,
+    message: state.showAlert.message
 })
 
 const mapDispatchToProps = {
     loadPopularMovies: loadPopularMovies,
-    showMoviesList: showMoviesListITems
+    showMoviesList: showMoviesListITems,
+    addListItem: addMyLisItem,
+    handleClose: hideAlert
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Peliculas)
