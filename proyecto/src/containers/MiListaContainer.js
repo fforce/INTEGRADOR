@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MovieListGrid from '../components/MovieListGrid'
 import { connect } from "react-redux"
-import { loadPopularMovies, showMoviesListITems } from "../actions/movies"
+import { loadPopularMovies, showMoviesListITems, removeListItem } from "../actions/movies"
 import { getMaxItems } from '../selectors/sharedSelectors'
 import FilterBar from '../components/FilterBar'
 import MovieListItems from '../components/MovieListItems'
@@ -23,6 +23,11 @@ class MiListaContainer extends Component {
         this.props.showMoviesList(true);
     }
 
+    removeListItem = item => event =>
+    {
+        this.props.removeListItem(item)
+    } 
+
     render() {
         const { peliculas, showMoviesListItems } = this.props;
 
@@ -43,7 +48,7 @@ class MiListaContainer extends Component {
                             {!showMoviesListItems ?
                                 <MovieListGrid showButtons={false} movies={peliculas} clickDeleteMovie={() => { }}> </MovieListGrid>
                                 :
-                                <MovieListItems movies={peliculas} showAddButtons={false} clickAddItem={() => { }} clickRemoveItem={() => { }} ></MovieListItems>
+                                <MovieListItems movies={peliculas} showAddButtons={false} clickAddItem={() => { }} clickRemoveItem={this.removeListItem} ></MovieListItems>
                             }
                         </div>
                     </section>
@@ -60,7 +65,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-    showMoviesList: showMoviesListITems
+    showMoviesList: showMoviesListITems,
+    removeListItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MiListaContainer)

@@ -62,9 +62,8 @@ class Peliculas extends Component {
                 <AlertDialog
                     open={this.props.open}
                     message={this.props.message}
-                    handleClose={this.closeAlert}
-
-                ></AlertDialog>
+                    handleClose={this.closeAlert}>
+                </AlertDialog>
             </div>
 
         )

@@ -5,7 +5,8 @@ import {
   SHOW_SERIES_LISTITEMS,
   ADD_MOVIE_ITEM,
   SHOW_ALERT,
-  HIDE_ALERT
+  HIDE_ALERT,
+  REMOVE_MOVIE_ITEM
 
 } from '../constants/actionTypes'
 import moment from 'moment';
@@ -105,5 +106,11 @@ export const addMyLisItem = item =>
   export const hideAlert = message => ({
     type: HIDE_ALERT,
     message
+  })
+
+
+  export const removeListItem = item => ({
+    type: REMOVE_MOVIE_ITEM,
+    item
   })
 

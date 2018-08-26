@@ -3,8 +3,9 @@ import MovieListGrid from '../components/MovieListGrid'
 import MovieListItems from '../components/MovieListItems'
 import FilterBar from '../components/FilterBar'
 import { connect } from "react-redux"
-import { loadPopularSeries, showSeriesListItems } from "../actions/movies"
+import { loadPopularSeries, showSeriesListItems,  addMyLisItem, hideAlert } from "../actions/movies"
 import { getMaxItems } from '../selectors/sharedSelectors'
+import AlertDialog from '../components/Shared/AlertDialog'
 
 
 class SeriesContainer extends Component {
@@ -28,6 +29,14 @@ class SeriesContainer extends Component {
         this.props.showSeriesList(true);
     }
 
+    addListItemMovie = item => event => {
+        this.props.addListItem(item);
+    }
+
+    closeAlert = () => {
+        this.props.handleClose()
+    }
+
 
     render() {
         const { series, showSeriesListItems } = this.props;
@@ -46,10 +55,15 @@ class SeriesContainer extends Component {
                         {!showSeriesListItems ?
                                 <MovieListGrid showButtons={false} movies={series} clickDeleteMovie={() => { }}> </MovieListGrid>
                                 :
-                                <MovieListItems movies={series} showAddButtons={true} clickAddItem={() => { }} clickRemoveItem={() => { }} ></MovieListItems>
+                                <MovieListItems movies={series} showAddButtons={true} clickAddItem={this.addListItemMovie} clickRemoveItem={() => { }} ></MovieListItems>
                             }      </div>
                     </section>
                 </div>
+                <AlertDialog
+                    open={this.props.open}
+                    message={this.props.message}
+                    handleClose={this.closeAlert}>
+                </AlertDialog>
             </div>
         )
     }
@@ -57,12 +71,16 @@ class SeriesContainer extends Component {
 
 const mapStateToProps = (state) => ({
     series: getMaxItems(state.series.seriesList),
-    showSeriesListItems: state.series.showSeriesListItems
+    showSeriesListItems: state.series.showSeriesListItems,
+    open: state.showAlert.open,
+    message: state.showAlert.message
 })
 
 const mapDispatchToProps = {
     loadPopularSeries: loadPopularSeries,
-    showSeriesList: showSeriesListItems
+    showSeriesList: showSeriesListItems,
+    addListItem: addMyLisItem,
+    handleClose: hideAlert
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SeriesContainer)
