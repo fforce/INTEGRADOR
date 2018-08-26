@@ -47,7 +47,7 @@ class SeriesContainer extends Component {
                         <h5 className="items-section-title">Series <a href="">Ver todas</a></h5>
                         <div className="filters-bar">
                             <div className="filters-bar-right">
-                                <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems}  ></FilterBar>
+                                <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems} activeLisItems={showSeriesListItems} ></FilterBar>
                             </div>
                         </div>
 

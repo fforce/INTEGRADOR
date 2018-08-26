@@ -46,7 +46,7 @@ class Peliculas extends Component {
                         <div className="filters-bar">
 
                             <div className="filters-bar-right">
-                                <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems}  ></FilterBar>
+                                <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems} activeLisItems={showMoviesListItems}  ></FilterBar>
                             </div>
                         </div>
 
