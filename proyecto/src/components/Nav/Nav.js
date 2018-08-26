@@ -3,7 +3,7 @@ import SearchBox from '../SearchBox'
 import PropTypes from "prop-types"
 import { Link } from 'react-router-dom'
 
-const Nav = ({ submitSearch }) => (
+const Nav = ({ submitSearch, counter }) => (
     <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -25,7 +25,7 @@ const Nav = ({ submitSearch }) => (
                         </li>
                         <li className="nav-item">
                             <Link to='/milista' className='nav-link items-milista' >Mi lista</Link>
-                            <span className="badge badge-danger">3</span>
+                            <span className="badge badge-danger">{counter}</span>
                         </li>
                     </ul>
                     <div className="form-inline my-2 my-md-0" action="busqueda-peliculas-grid.html">

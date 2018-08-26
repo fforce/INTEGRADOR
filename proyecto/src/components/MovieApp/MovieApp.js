@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
-import Nav from '../Nav'
-import MovieListGrid from '../MovieListGrid'
-import MovieListItems from '../MovieListItems'
-import FilterBar from '../FilterBar'
-import MovieApi from "../../API/MovieApi"
+import Nav from '../../containers/NavContainer'
 import Contenido from "./Contenido"
 import { BrowserRouter } from "react-router-dom";
-
-
-
 
 class MovieApp extends Component {
 
