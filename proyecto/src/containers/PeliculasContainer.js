@@ -68,7 +68,7 @@ class Peliculas extends Component {
 
 
 const mapStateToProps = (state) => ({
-    peliculas: getMaxItems(state.movies.movieList),
+    peliculas: state.movies.movieList,
     showMoviesListItems: state.movies.showMoviesListItems,
     open: state.showAlert.open,
     message: state.showAlert.message
