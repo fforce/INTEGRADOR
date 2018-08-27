@@ -10,14 +10,13 @@ class AlertDialog extends React.Component {
 
   render() {
     return (
-      <div>
-          
+      <div>          
         <Dialog
           open={this.props.open}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+          <DialogTitle id="alert-dialog-title">{"Movie React App"}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
                 {this.props.message}
