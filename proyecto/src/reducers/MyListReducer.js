@@ -4,8 +4,6 @@ import {
     REMOVE_MOVIE_ITEM
 } from '../constants/actionTypes'
 
-import moment from 'moment'
-
 const initialStateMyList = {
     movieList: [],
     showMoviesListItems: false

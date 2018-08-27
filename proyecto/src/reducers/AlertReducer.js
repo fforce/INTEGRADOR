@@ -3,8 +3,6 @@ import {
     SHOW_ALERT
 } from '../constants/actionTypes'
 
-import moment from 'moment'
-
 const initialStateSeries = {
     open:false,
     message:""

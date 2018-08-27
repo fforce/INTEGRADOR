@@ -82,12 +82,12 @@ export const addMyLisItem = item =>
     debugger
     let exist = false
     for (var i of state.myList.movieList) {
-      if (i.id == item.id) {
+      if (i.id === item.id) {
         exist = true
       }
     }
 
-    if(exist == false){
+    if(exist === false){
       dispatch({ type: ADD_MOVIE_ITEM, movie:item })
       dispatch({ type: SHOW_ALERT, message:"Agregado correctamente"})
     }else{

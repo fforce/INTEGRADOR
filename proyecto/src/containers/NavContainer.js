@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import MovieListGrid from '../components/MovieListGrid'
 import { connect } from "react-redux"
 import Nav from '../components/Nav'
 

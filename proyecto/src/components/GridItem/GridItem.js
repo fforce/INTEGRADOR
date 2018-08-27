@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 
 class GridItem extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         const { title, date, imgUrl, showButtons, clickDeleteMovie } = this.props;
@@ -14,7 +10,7 @@ class GridItem extends Component {
         return (
             <article className="col-md-2">
                 <div href='#' className="grid-item">
-                    <img src={imgUrl} alt="Movie Image" className="img-fluid" />
+                    <img src={imgUrl}  className="img-fluid" />
                     <span className="grid-item-body">
                         <span className="grid-item-title">{title}</span>
                         <span className="grid-item-date">{date}</span>

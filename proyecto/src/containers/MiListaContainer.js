@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import MovieListGrid from '../components/MovieListGrid'
 import { connect } from "react-redux"
-import { loadPopularMovies, showMoviesListITems, removeListItem } from "../actions/movies"
-import { getMaxItems } from '../selectors/sharedSelectors'
+import { showMoviesListITems, removeListItem } from "../actions/movies"
 import FilterBar from '../components/FilterBar'
 import MovieListItems from '../components/MovieListItems'
 
 
 class MiListaContainer extends Component {
-
-    constructor(props) {
-        super(props)
-    }  
 
     showListGrid = event =>
     {
@@ -35,7 +30,7 @@ class MiListaContainer extends Component {
             <div className="py-5 bg-light">
                 <div className="container">
                     <section className="items-section">
-                        <h5 className="items-section-title">Peliculas <a href="">Ver todas</a></h5>
+                        <h5 className="items-section-title">Peliculas <a href='#'>Ver todas</a></h5>
 
                         <div className="filters-bar">
 

@@ -6,10 +6,6 @@ import PropTypes from "prop-types";
 
 class ListItem extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         const { title, description, imgUrl, showAddButtons, clickAddItem, clickRemoveItem } = this.props;
@@ -18,7 +14,7 @@ class ListItem extends Component {
             <article className="col-md-6">
                 <div className="list-item">
                     <div className="list-item-img">
-                        <img src={imgUrl} alt="Movie Image" className="img-fluid" />
+                        <img src={imgUrl} alt={"Movie Image"} className="img-fluid" />
                     </div>
                     <div className="list-item-body">
                         <h3 className="list-item-title">{title}</h3>

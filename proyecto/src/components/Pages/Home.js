@@ -155,7 +155,7 @@ class Home extends Component {
                     <div className="container">
                         <section className="items-section">
                        
-                            <h5 className="items-section-title">Mis Peliculas <a href="">Ver todas</a></h5>
+                            <h5 className="items-section-title">Mis Peliculas <a href='#'>Ver todas</a></h5>
 
                             <FilterBar onClickGrid={this.handleOnClickGridMis()} onClickList={this.handleOnClickListMis()} />
 
@@ -171,7 +171,7 @@ class Home extends Component {
                                     )
                             }
 
-                         <h5 className="items-section-title">Peliculas <a href="">Ver todas</a></h5>
+                         <h5 className="items-section-title">Peliculas <a href='#'>Ver todas</a></h5>
                             <FilterBar onClickGrid={this.handleOnClickGrid()} onClickList={this.handleOnClickList()} />
                             {
                                 this.state.showGridPeliculas ? (

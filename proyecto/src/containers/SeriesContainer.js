@@ -10,10 +10,6 @@ import AlertDialog from '../components/Shared/AlertDialog'
 
 class SeriesContainer extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
 
         this.props.loadPopularSeries()
@@ -44,7 +40,7 @@ class SeriesContainer extends Component {
             <div className="py-5 bg-light">
                 <div className="container">
                     <section className="items-section">
-                        <h5 className="items-section-title">Series <a href="">Ver todas</a></h5>
+                        <h5 className="items-section-title">Series <a href='#'>Ver todas</a></h5>
                         <div className="filters-bar">
                             <div className="filters-bar-right">
                                 <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems} activeLisItems={showSeriesListItems} ></FilterBar>

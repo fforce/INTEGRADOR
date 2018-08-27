@@ -15,10 +15,10 @@ class FilterBar extends Component {
                 <div className="filters-bar-left">
                 </div>
                 <div className="filters-bar-right">
-                    <a href="#" onClick={onClickGrid} className={classGrid} aria-label="Profile">
+                    <a href='#' onClick={onClickGrid} className={classGrid} aria-label="Profile">
                         <i className="mdi mdi-view-grid" aria-hidden="true"></i>
                     </a>
-                    <a href="#" onClick={onClickList} className={classListItem} aria-label="Profile">
+                    <a href='#' onClick={onClickList} className={classListItem} aria-label="Profile">
                         <i className="mdi mdi-view-list" aria-hidden="true"></i>
                     </a>
                 </div>

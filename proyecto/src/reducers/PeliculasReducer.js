@@ -1,5 +1,4 @@
 import {
-    ADD_MOVIE,
     SET_MOVIES,
     SHOW_MOVIES_LISTITEMS
 } from '../constants/actionTypes'
