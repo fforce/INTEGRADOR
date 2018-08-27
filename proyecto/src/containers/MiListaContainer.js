@@ -8,20 +8,17 @@ import MovieListItems from '../components/MovieListItems'
 
 class MiListaContainer extends Component {
 
-    showListGrid = event =>
-    {
+    showListGrid = event => {
         this.props.showMoviesList(false);
     }
 
-    showListItems = event =>
-    {
+    showListItems = event => {
         this.props.showMoviesList(true);
     }
 
-    removeListItem = item => event =>
-    {
+    removeListItem = item => event => {
         this.props.removeListItem(item)
-    } 
+    }
 
     render() {
         const { peliculas, showMoviesListItems } = this.props;
@@ -38,14 +35,19 @@ class MiListaContainer extends Component {
                                 <FilterBar onClickGrid={this.showListGrid} onClickList={this.showListItems}  ></FilterBar>
                             </div>
                         </div>
+                        { peliculas.length > 0 ?
+                            <div className='row'>
+                                {
+                                    !showMoviesListItems ?
+                                        <MovieListGrid showButtons={false} movies={peliculas} clickDeleteMovie={() => { }}> </MovieListGrid>
+                                        :
+                                        <MovieListItems movies={peliculas} showAddButtons={false} clickAddItem={() => { }} clickRemoveItem={this.removeListItem} ></MovieListItems>
+                                }
 
-                        <div className='row'>
-                            {!showMoviesListItems ?
-                                <MovieListGrid showButtons={false} movies={peliculas} clickDeleteMovie={() => { }}> </MovieListGrid>
-                                :
-                                <MovieListItems movies={peliculas} showAddButtons={false} clickAddItem={() => { }} clickRemoveItem={this.removeListItem} ></MovieListItems>
-                            }
-                        </div>
+                            </div>
+                            :
+                            <div> <h1>Aún no se han agregado elementos a esta lista</h1>  </div>
+                        }
                     </section>
                 </div>
             </div>

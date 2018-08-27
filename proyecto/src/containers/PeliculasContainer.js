@@ -37,7 +37,7 @@ class Peliculas extends Component {
             <div className="py-5 bg-light">
                 <div className="container">
                     <section className="items-section">
-                        <h5 className="items-section-title">Peliculas a <a href='#'>Ver todas</a></h5>
+                        <h5 className="items-section-title">Peliculas  <a href='#'>Ver todas</a></h5>
 
                         <div className="filters-bar">
 
